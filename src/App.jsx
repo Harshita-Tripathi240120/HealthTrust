@@ -5,13 +5,14 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Contact from "./pages/Contact";
 import About from './pages/About';
 import Footer from "./components/Footer";
 import B2BInquiry from './pages/B2BInquiry';
 import UploadPrescription from './pages/UploadPrescription';
+import AuthSwitch from './components/AuthSwitch';
 import Cart from "./pages/Cart";
 import "./App.css";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/b2b" element={<B2BInquiry />} />
+        <Route path="/auth" element={<AuthSwitch />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/prescription" element={<UploadPrescription />} />
