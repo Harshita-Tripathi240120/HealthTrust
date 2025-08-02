@@ -1,0 +1,78 @@
+.footer {
+  background-color: #333;
+  color: white;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.footer a:hover {
+  color: #f9a7cd;
+}
+
+.btn-pink {
+  background-color: #ec4899;
+  color: white;
+  border: none;
+}
+
+.btn-pink:hover {
+  background-color: #db2777;
+}
+
+.newsletter-form input::placeholder {
+  color: #aaa;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h4,
+.footer-section h5 {
+  color: #ffff;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+  color: #ec4899;
+}
+
+.footer .socials a {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .socials a:hover {
+  color: #ec4899;
+}
+body, html {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
