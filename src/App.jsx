@@ -1,19 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Toaster } from "react-hot-toast";
-import { Outlet } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute";
+
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Contact from "./pages/Contact";
-import About from './pages/About';
-import Footer from "./components/Footer";
-import B2BInquiry from './pages/B2BInquiry';
-import UploadPrescription from './pages/UploadPrescription';
-import AuthSwitch from './components/AuthSwitch';
+import About from "./pages/About";
+import B2BInquiry from "./pages/B2BInquiry";
+import UploadPrescription from "./pages/UploadPrescription";
 import Cart from "./pages/Cart";
+import NotFound from "./pages/NotFound"; // Optional custom 404 page
+
 import "./App.css";
 
 function App() {
@@ -22,24 +25,69 @@ function App() {
       <Navbar />
       <Toaster />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/cart" element={<Cart />} />
+        {/* Public routes */}
         <Route path="/login" element={<Login />} />
-        <Route path="/b2b" element={<B2BInquiry />} />
-        <Route path="/auth" element={<AuthSwitch />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/prescription" element={<UploadPrescription />} />
         <Route path="/register" element={<Register />} />
+
+        {/* Protected routes */}
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/catalog"
+          element={
+            <PrivateRoute>
+              <Catalog />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/b2b"
+          element={
+            <PrivateRoute>
+              <B2BInquiry />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/prescription"
+          element={
+            <PrivateRoute>
+              <UploadPrescription />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PrivateRoute>
+              <About />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
+
+        {/* Optional public contact route */}
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Fallback route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <main>
-        <Outlet /> {/* or Routes */}
-      </main>
       <Footer />
     </Router>
   );
 }
-
 
 export default App;

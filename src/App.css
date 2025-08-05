@@ -456,77 +456,73 @@ body.dark button.secondary:hover {
 }
 
 /*inquiry*/
-.b2b-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #f472b6;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-}
 .custom-container {
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding: 0 15px;
-  background: #f5c8df;
-  border-radius: 12px;
-  box-shadow: 0 0 25px #f472b6;
+  background-color: #e1eff8;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(66, 66, 66, 0.08);
+  padding: 40px 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
-.b2b-title {
+.custom-container h2 {
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #1f2937;
-}
-
-.b2b-form-group {
-  margin-bottom: 1.25rem;
-}
-
-.b2b-form-label {
-  display: block;
   font-weight: 600;
+  color: #333;
+}
+
+.custom-container p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #444;
   margin-bottom: 0.5rem;
-  color: #4b5563;
 }
 
-.b2b-form-input,
-.b2b-form-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 10px 14px;
   font-size: 1rem;
-  background: #f9fafb;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.b2b-form-textarea {
-  resize: vertical;
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
-.b2b-submit-btn {
-  background-color: #ec4899;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+textarea.form-control {
+  resize: none;
 }
 
-.b2b-submit-btn:hover {
-  background-color: #db2777;
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
 }
 
-@media (max-width: 640px) {
-  .b2b-container {
-    padding: 1rem;
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+@media (max-width: 576px) {
+  .custom-container {
+    padding: 25px 15px;
   }
 }
+
 /*about us*/
 .about-page {
   background-color: #f9fafb;
@@ -551,4 +547,76 @@ body.dark button.secondary:hover {
 .card-title{
   color: #111827;
 }
+/*login*/
+.login-wrapper {
+  background: linear-gradient(120deg, #f3f4f6, #dbeafe);
+}
 
+.login-box {
+  border-top: 5px solid #0d6efd;
+}
+
+/*register*/
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg, #f9fafb);
+  padding: 2rem;
+}
+
+.register-form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #ec4899;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-form button:hover {
+  background: #db2777;
+}
+
+.error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
